@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mon Club International - CFM Desk</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="top-header">
+    <div class="container">
+      <span class="follow-text">Follow us:</span>
+      <div class="social-icons">
+        <a href="#"><img src="images/faceb.jpeg" alt="Facebook" class="social-icon"></a>
+        <a href="#"><img src="images/twitter.jpeg" alt="Twitter" class="social-icon"></a>
+        <a href="#"><img src="images/instag.jpeg" alt="Instagram" class="social-icon"></a>
+        <a href="#"><img src="images/linkedln.jpeg" alt="LinkedIn" class="social-icon"></a>
+      </div>
+      <p class="address">
+        <img src="images/faceb.jpeg" alt="phone" class="contact-icon"> 08012345678
+        <span class="address-text">PB2, Paradise Avenue, Dayspring Estate, Sabon Lugbe, Abuja, Nigeria.</span>
+      </p>
+      <div class="reg-info">CAC REG. NO: 150232</div>
+    </div>
+  </div>
+
+  <header>
+    <nav>
+      <a href="#" class="logo-link" onclick="showPage('home')">
+        <img src="images/logoI.jpeg" alt="Mon Club International Logo" class="logo">
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#" onclick="showPage('home')">HOME</a></li>
+        <li><a href="#" onclick="showPage('about')">ABOUT US</a></li>
+        <li class="dropdown-trigger">
+          <a href="#" onclick="toggleDropdown(event, 'projects')">PROJECTS</a>
+          <ul class="dropdown" id="projects">
+            <li><a href="#" onclick="showPage('home')">Past Projects</a></li>
+            <li><a href="#" onclick="showPage('home')">Damasak WFP Project</a></li>
+            <li><a href="#" onclick="showPage('home')">New Marte Project</a></li>
+            <li><a href="#" onclick="showPage('home')">Rann Project</a></li>
+            <li><a href="#" onclick="showPage('home')">Bama Project</a></li>
+            <li><a href="#" onclick="showPage('home')">Emergency Responses on Nutrition and Wash</a></li>
+          </ul>
+        </li>
+        <li class="dropdown-trigger">
+          <a href="#" onclick="toggleDropdown(event, 'units')">DEPARTMENTS</a>
+          <ul class="dropdown" id="units">
+            <li><a href="#" onclick="showLogin('Admin')">Admin</a></li>
+            <li><a href="#" onclick="showLogin('Logistics')">Logistics</a></li>
+            <li><a href="#" onclick="showLogin('Protection')">Protection</a></li>
+            <li><a href="#" onclick="showLogin('M&E')">M&E</a></li>
+            <li><a href="#" onclick="showLogin('Programs')">Programs</a></li>
+          </ul>
+        </li>
+        <li><a href="#" onclick="showPage('complaint')">COMPLAINTS & FEEDBACK</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home-page" class="page active">
+      <div class="hero">
+        <h1>Welcome to Mon Club International</h1>
+        <p>Providing humanitarian assistance and building resilient communities.</p>
+        <a href="#" class="btn-primary" onclick="showPage('complaint')">Submit a Complaint</a>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <h3>Complaint & Feedback Mechanism</h3>
+          <p>Beneficiaries can lodge complaints about services, distribution, staff behavior, and more.</p>
+          <a href="#" onclick="showPage('complaint')" class="btn-secondary">Learn More</a>
+        </div>
+        <div class="card">
+          <h3>Our Departments</h3>
+          <p>Admin, Logistics, Protection, M&E, Programs and other units work together to serve communities.</p>
+          <a href="#" onclick="showLogin('Admin')" class="btn-secondary">Access Dashboard</a>
+        </div>
+        <div class="card">
+          <h3>Our Projects</h3>
+          <p>Active projects in Damasak, Marte, Rann, Bama and emergency response operations.</p>
+          <a href="#" onclick="showPage('home')" class="btn-secondary">View Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="about-page" class="page">
+      <div class="content-wrapper">
+        <h1>About Mon Club International</h1>
+        <p>Mon Club International is a humanitarian NGO dedicated to providing relief and development services to vulnerable communities across Nigeria.</p>
+        <p>Our mission is to alleviate suffering, promote dignity, and empower communities through targeted interventions in protection, logistics, nutrition, WASH, and emergency response.</p>
+        <p>We operate across multiple locations including Damasak, Marte, Rann, Bama, and Seye, responding to urgent humanitarian needs and building long-term resilience.</p>
+        <h2>Our Values</h2>
+        <ul>
+          <li>Accountability to affected populations</li>
+          <li>Transparency and integrity</li>
+          <li>Community participation</li>
+          <li>Non-discrimination</li>
+          <li>Do no harm</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="complaint-page" class="page">
+      <div class="content-wrapper">
+        <h1>Complaint & Feedback Mechanism (CFM) Desk</h1>
+        <p class="page-desc">We welcome your feedback and complaints. All submissions are taken seriously and will be addressed promptly. You may choose to remain anonymous.</p>
+        <form id="complaintForm">
+          <div class="form-group">
+            <label for="name">Your Name (optional)</label>
+            <input type="text" id="name" name="name" placeholder="Leave blank for anonymous">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="e.g. 08012345678" required>
+          </div>
+          <div class="form-group">
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="e.g. Bama Camp A" required>
+          </div>
+          <div class="form-group">
+            <label for="complaintType">Complaint Category</label>
+            <select id="complaintType" name="type" required>
+              <option value="">Select category</option>
+              <option value="Distribution">Distribution Issue</option>
+              <option value="Staff Behavior">Staff Behavior</option>
+              <option value="Exclusion">Exclusion from Services</option>
+              <option value="Quality">Service/Quality Concern</option>
+              <option value="Protection">Protection Concern</option>
+              <option value="Fraud/Corruption">Fraud/Corruption</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="description">Describe Your Complaint</label>
+            <textarea id="description" name="description" placeholder="Provide details of your complaint..." required rows="5"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="priority">Priority Level</label>
+            <select id="priority" name="priority" required>
+              <option value="">Select priority</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+              <option value="Urgent">Urgent</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-primary">Submit Complaint</button>
+          <div id="formMessage" class="form-message"></div>
+        </form>
+      </div>
+    </section>
+
+    <section id="login-page" class="page">
+      <div class="content-wrapper">
+        <div class="login-container">
+          <h1>Department Login</h1>
+          <p class="page-desc">Access the complaints dashboard to review and respond to feedback.</p>
+          <form id="loginForm">
+            <div class="form-group">
+              <label for="department">Department</label>
+              <select id="department" required>
+                <option value="">Select your department</option>
+                <option value="Admin">Admin</option>
+                <option value="Logistics">Logistics</option>
+                <option value="Protection">Protection</option>
+                <option value="M&E">M&E</option>
+                <option value="Programs">Programs</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="password">Access Code</label>
+              <input type="password" id="password" placeholder="Enter access code" required>
+            </div>
+            <div class="login-hint">Demo access code: <strong>cfm2026</strong></div>
+            <button type="submit" class="btn-primary">Access Dashboard</button>
+            <div id="loginMessage" class="form-message"></div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="dashboard-page" class="page">
+      <div class="content-wrapper full-width">
+        <div class="dashboard-header">
+          <div>
+            <h1>CFM Dashboard</h1>
+            <p>Department: <span id="currentDept" class="dept-badge"></span></p>
+          </div>
+          <button class="btn-secondary" onclick="logout()">Logout</button>
+        </div>
+
+        <div class="dashboard-stats" id="stats">
+          <div class="stat-card">
+            <h3 id="totalComplaints">0</h3>
+            <p>Total Complaints</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="pendingComplaints">0</h3>
+            <p>Pending</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="resolvedComplaints">0</h3>
+            <p>Resolved</p>
+          </div>
+          <div class="stat-card">
+            <h3 id="urgentComplaints">0</h3>
+            <p>Urgent</p>
+          </div>
+        </div>
+
+        <div class="dashboard-controls">
+          <div class="filter-group">
+            <label for="filterStatus">Filter by Status:</label>
+            <select id="filterStatus" onchange="filterComplaints()">
+              <option value="all">All</option>
+              <option value="Pending">Pending</option>
+              <option value="In Progress">In Progress</option>
+              <option value="Resolved">Resolved</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="filterType">Filter by Category:</label>
+            <select id="filterType" onchange="filterComplaints()">
+              <option value="all">All Categories</option>
+              <option value="Distribution">Distribution</option>
+              <option value="Staff Behavior">Staff Behavior</option>
+              <option value="Exclusion">Exclusion</option>
+              <option value="Quality">Quality</option>
+              <option value="Protection">Protection</option>
+              <option value="Fraud/Corruption">Fraud/Corruption</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label for="searchInput">Search:</label>
+            <input type="text" id="searchInput" placeholder="Ticket#, name, location..." oninput="filterComplaints()">
+          </div>
+        </div>
+
+        <div id="complaintsList" class="complaints-list">
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Mon Club International</h3>
+        <p>Humanitarian Assistance & Community Development</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <a href="#" onclick="showPage('home')">Home</a>
+        <a href="#" onclick="showPage('about')">About Us</a>
+        <a href="#" onclick="showPage('complaint')">Submit Complaint</a>
+      </div>
+      <div class="footer-section">
+        <h3>Contact</h3>
+        <p>PB2, Paradise Avenue, Dayspring Estate, Sabon Lugbe, Abuja</p>
+        <p>Phone: 08012345678</p>
+        <p>CAC REG. NO: 150232</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Mon Club International. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
